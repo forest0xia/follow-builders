@@ -88,12 +88,37 @@ Follow the prompts from the `prompts` field in the JSON:
 
 Assemble the digest following `prompts.digest_intro`.
 
+**ABSOLUTE RULES:**
+- NEVER invent or fabricate content. Only use what's in the JSON.
+- Every piece of content MUST have its URL. No URL = do not include.
+- Do NOT guess job titles. Use the `bio` field or just the person's name.
+- Do NOT visit x.com, search the web, or call any API.
+
 ### Step 5: Apply language
 
 Read `config.language` from the JSON:
 - **"en":** Entire digest in English.
 - **"zh":** Entire digest in Chinese. Follow `prompts.translate`.
-- **"bilingual":** Follow `prompts.translate` for interleaved EN/CN paragraph by paragraph.
+- **"bilingual":** Interleave English and Chinese **paragraph by paragraph**.
+  For each builder's tweet summary: English version, then Chinese translation
+  directly below, then the next builder. For the podcast: English summary,
+  then Chinese translation directly below. Like this:
+
+  ```
+  Box CEO Aaron Levie argues that AI agents will reshape software procurement...
+  https://x.com/levie/status/123
+
+  Box CEO Aaron Levie 认为 AI agent 将从根本上重塑软件采购...
+  https://x.com/levie/status/123
+
+  Replit CEO Amjad Masad launched Agent 4...
+  https://x.com/amasad/status/456
+
+  Replit CEO Amjad Masad 发布了 Agent 4...
+  https://x.com/amasad/status/456
+  ```
+
+  Do NOT output all English first then all Chinese. Interleave them.
 
 ### Step 6: Deliver
 

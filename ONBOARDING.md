@@ -102,7 +102,17 @@ Build cron expression from preferences (e.g. daily 8am → `"0 8 * * *"`).
 
 Ask the user: "Should I deliver to this same chat?" If yes, detect the channel name and target ID.
 
-To find target IDs: run `openclaw logs --follow`, send a test message, and read the ID from logs. Or use channel-specific methods (`openclaw pairing list feishu`, Discord Developer Mode, etc.).
+How to get the target ID for each channel:
+
+| Channel | Target format | How to find it |
+|---------|--------------|----------------|
+| Telegram | Numeric chat ID (e.g. `123456789` for DMs, `-1001234567890` for groups) | Run `openclaw logs --follow`, send a test message, read the `from.id` field. Or: `curl "https://api.telegram.org/bot<token>/getUpdates"` and look for `chat.id` |
+| Telegram forum | Group ID with topic (e.g. `-1001234567890:topic:42`) | Same as above, include the topic thread ID |
+| Feishu | User open_id (e.g. `ou_e67df1a850910efb902462aeb87783e5`) or group chat_id (e.g. `oc_xxx`) | Check `openclaw pairing list feishu` or gateway logs after the user messages the bot |
+| Discord | `user:<user_id>` for DMs, `channel:<channel_id>` for channels | User enables Developer Mode in Discord settings, right-clicks to copy IDs |
+| Slack | `channel:<channel_id>` (e.g. `channel:C1234567890`) | Right-click channel name in Slack, copy link, extract the ID |
+| WhatsApp | Phone number with country code (e.g. `+15551234567`) | The user provides it |
+| Signal | Phone number | The user provides it |
 
 Create the cron job:
 ```bash
