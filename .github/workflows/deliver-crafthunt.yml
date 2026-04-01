@@ -1,0 +1,62 @@
+name: Deliver to CraftHunt
+
+on:
+  push:
+    paths:
+      - 'digests/*.md'
+
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Find new digest file
+        id: digest
+        run: |
+          FILE=$(git diff --name-only HEAD~1 HEAD -- 'digests/*.md' | head -1)
+          if [ -z "$FILE" ]; then
+            echo "No new digest file found"
+            exit 0
+          fi
+          echo "file=$FILE" >> "$GITHUB_OUTPUT"
+          # Extract date from filename (digests/YYYY-MM-DD.md)
+          DATE=$(basename "$FILE" .md)
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+
+      - name: Deliver to CraftHunt
+        if: steps.digest.outputs.file
+        env:
+          CRAFTHUNT_API_KEY: ${{ secrets.CRAFTHUNT_API_KEY }}
+          CRAFTHUNT_LISTING_ID: ${{ secrets.CRAFTHUNT_LISTING_ID }}
+        run: |
+          FILE="${{ steps.digest.outputs.file }}"
+          DATE="${{ steps.digest.outputs.date }}"
+          CONTENT=$(jq -Rs . < "$FILE")
+
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST https://crafthunt.ai/api/v1/deliver \
+            -H 'Content-Type: application/json' \
+            -H "X-API-Key: $CRAFTHUNT_API_KEY" \
+            -d @- <<PAYLOAD
+          {
+            "listing_id": "$CRAFTHUNT_LISTING_ID",
+            "title": "AI Builders Digest — $DATE",
+            "run_id": "daily-digest-$DATE",
+            "content": $CONTENT
+          }
+          PAYLOAD
+          )
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          echo "HTTP $HTTP_CODE"
+          echo "$BODY"
+
+          if [ "$HTTP_CODE" -ge 400 ]; then
+            echo "::error::Delivery failed with HTTP $HTTP_CODE"
+            exit 1
+          fi
