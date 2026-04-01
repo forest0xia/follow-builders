@@ -53,6 +53,17 @@ async function fetchText(url) {
   return res.text();
 }
 
+// Try local file first (works in remote containers where network may be
+// restricted but the repo is cloned), fall back to remote fetch.
+async function loadFeed(localPath, remoteUrl) {
+  if (existsSync(localPath)) {
+    try {
+      return JSON.parse(await readFile(localPath, 'utf-8'));
+    } catch { /* fall through to remote */ }
+  }
+  return fetchJSON(remoteUrl);
+}
+
 // -- Main --------------------------------------------------------------------
 
 async function main() {
@@ -72,11 +83,13 @@ async function main() {
     }
   }
 
-  // 2. Fetch all three feeds
+  // 2. Load feeds — prefer local files (in repo root), fall back to remote URLs
+  const scriptDir = decodeURIComponent(new URL('.', import.meta.url).pathname);
+  const repoRoot = join(scriptDir, '..');
   const [feedX, feedPodcasts, feedBlogs] = await Promise.all([
-    fetchJSON(FEED_X_URL),
-    fetchJSON(FEED_PODCASTS_URL),
-    fetchJSON(FEED_BLOGS_URL)
+    loadFeed(join(repoRoot, 'feed-x.json'), FEED_X_URL),
+    loadFeed(join(repoRoot, 'feed-podcasts.json'), FEED_PODCASTS_URL),
+    loadFeed(join(repoRoot, 'feed-blogs.json'), FEED_BLOGS_URL)
   ]);
 
   if (!feedX) errors.push('Could not fetch tweet feed');
@@ -90,7 +103,6 @@ async function main() {
   // Otherwise, fetch the latest from GitHub so they get central improvements.
   // If GitHub is unreachable, fall back to the local copy shipped with the skill.
   const prompts = {};
-  const scriptDir = decodeURIComponent(new URL('.', import.meta.url).pathname);
   const localPromptsDir = join(scriptDir, '..', 'prompts');
   const userPromptsDir = join(USER_DIR, 'prompts');
 

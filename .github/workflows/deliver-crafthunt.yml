@@ -20,15 +20,86 @@ jobs:
           FILE=$(git diff --name-only HEAD~1 HEAD -- 'digests/*.md' | head -1)
           if [ -z "$FILE" ]; then
             echo "No new digest file found"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           echo "file=$FILE" >> "$GITHUB_OUTPUT"
-          # Extract date from filename (digests/YYYY-MM-DD.md)
           DATE=$(basename "$FILE" .md)
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
 
+      - name: Check digest has real content
+        if: steps.digest.outputs.file && steps.digest.outputs.skip != 'true'
+        id: check
+        run: |
+          FILE="${{ steps.digest.outputs.file }}"
+          CONTENT=$(cat "$FILE")
+
+          # Detect empty/error digests by checking for known "no content" patterns
+          if echo "$CONTENT" | grep -qiE '(no new updates|no updates today|all.*sources.*empty|came up empty|nothing to report|no new content)'; then
+            echo "Digest has no real content — skipping delivery"
+            echo "empty=true" >> "$GITHUB_OUTPUT"
+
+            # Extract error details for the issue body
+            ERRORS=""
+            if echo "$CONTENT" | grep -qiE '(402|payment required)'; then
+              ERRORS="${ERRORS}- X/Twitter API: HTTP 402 (payment required)\n"
+            fi
+            if echo "$CONTENT" | grep -qiE '(429|rate.?limit)'; then
+              ERRORS="${ERRORS}- YouTube/Podcasts API: HTTP 429 (rate limited)\n"
+            fi
+            if echo "$CONTENT" | grep -qiE '(no new posts|no new articles|blogs?.*(empty|none))'; then
+              ERRORS="${ERRORS}- Blogs: No new posts found\n"
+            fi
+            if echo "$CONTENT" | grep -qiE '(could not fetch|failed to fetch|error)'; then
+              ERRORS="${ERRORS}- Feed fetch failures detected\n"
+            fi
+            if [ -z "$ERRORS" ]; then
+              ERRORS="- All content sources returned empty\n"
+            fi
+            echo "errors<<EOFDELIM" >> "$GITHUB_OUTPUT"
+            echo -e "$ERRORS" >> "$GITHUB_OUTPUT"
+            echo "EOFDELIM" >> "$GITHUB_OUTPUT"
+          else
+            echo "empty=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create issue for empty digest (if not duplicate)
+        if: steps.check.outputs.empty == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DATE="${{ steps.digest.outputs.date }}"
+          TITLE="Empty digest: no content available ($DATE)"
+
+          # Check if an open issue with the same title pattern already exists
+          EXISTING=$(gh issue list --state open --search "Empty digest: no content available" --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            echo "Open issue #$EXISTING already exists — adding comment"
+            gh issue comment "$EXISTING" --body "Still empty on $DATE:
+          ${{ steps.check.outputs.errors }}"
+            exit 0
+          fi
+
+          gh issue create \
+            --title "$TITLE" \
+            --body "$(cat <<'EOF'
+          ## Empty digest detected
+
+          The daily digest for ${{ steps.digest.outputs.date }} had no real content. The remote agent committed a placeholder instead of a real digest.
+
+          ### Errors detected
+          ${{ steps.check.outputs.errors }}
+          ### What to check
+          - Are the upstream feeds at [zarazhangrui/follow-builders](https://github.com/zarazhangrui/follow-builders) being updated?
+          - Check `feed-x.json`, `feed-podcasts.json`, `feed-blogs.json` in the upstream repo
+          - The remote trigger may be failing to read local feed files
+
+          This issue will be commented on if subsequent days also produce empty digests. Close it once resolved.
+          EOF
+          )"
+
       - name: Deliver to CraftHunt
-        if: steps.digest.outputs.file
+        if: steps.digest.outputs.file && steps.digest.outputs.skip != 'true' && steps.check.outputs.empty != 'true'
         env:
           CRAFTHUNT_API_KEY: ${{ secrets.CRAFTHUNT_API_KEY }}
           CRAFTHUNT_LISTING_ID: ${{ secrets.CRAFTHUNT_LISTING_ID }}
