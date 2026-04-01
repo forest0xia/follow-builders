@@ -42,15 +42,19 @@ const PROMPT_FILES = [
 // -- Fetch helpers -----------------------------------------------------------
 
 async function fetchJSON(url) {
-  const res = await fetch(url);
-  if (!res.ok) return null;
-  return res.json();
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    return res.json();
+  } catch { return null; }
 }
 
 async function fetchText(url) {
-  const res = await fetch(url);
-  if (!res.ok) return null;
-  return res.text();
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    return res.text();
+  } catch { return null; }
 }
 
 // Try local file first (works in remote containers where network may be
