@@ -1,119 +1,12 @@
 {
-  "generatedAt": "2026-04-01T01:00:50.032Z",
+  "generatedAt": "2026-04-01T19:12:20.371Z",
   "lookbackHours": 24,
-  "x": [
-    {
-      "source": "x",
-      "name": "Swyx",
-      "handle": "swyx",
-      "bio": "achieve ambition with intentionality, intensity, integrity & insanity.\n\naffiliations:\n- @dxtipshq \n- @cognition\n- @temporalio\n- @aidotengineer\n- @latentspacepod",
-      "tweets": [
-        {
-          "id": "2039075139741241517",
-          "text": "sarah achieves the most impossible developer events - she got a bunch of developers at a writers meetup to sit together….\n\n… and actually write 🤯\n\nthanks to @byAnhtho for being our 3rd Writing Mentor!\n\n@allenpark helped with AV and will upload both her and @QuinnyPig video soon",
-          "createdAt": "2026-03-31T20:19:32.000Z",
-          "url": "https://x.com/swyx/status/2039075139741241517",
-          "likes": 22,
-          "retweets": 0,
-          "replies": 5,
-          "isQuote": true,
-          "quotedTweetId": "2039068140370583869"
-        },
-        {
-          "id": "2039073658552062189",
-          "text": "wow. @Microsoft just appointed a CVP whose entire job is OpenClaw. https://t.co/BpQeniIiVo https://t.co/5BzGvkfvVD",
-          "createdAt": "2026-03-31T20:13:39.000Z",
-          "url": "https://x.com/swyx/status/2039073658552062189",
-          "likes": 144,
-          "retweets": 10,
-          "replies": 11,
-          "isQuote": true,
-          "quotedTweetId": "2039023022699655297"
-        }
-      ]
-    },
-    {
-      "source": "x",
-      "name": "Garry Tan",
-      "handle": "garrytan",
-      "bio": "President & CEO @ycombinator —Founder @garryslist—Creator of GStack—designer/engineer who helps founders—SF Dem accelerating the boom loop",
-      "tweets": [
-        {
-          "id": "2039130252212154720",
-          "text": "If you can make the agents do magic for you and you have taste and agency, then you could be 16, 20, 30, or 45 or 60 and it doesn't matter",
-          "createdAt": "2026-03-31T23:58:31.000Z",
-          "url": "https://x.com/garrytan/status/2039130252212154720",
-          "likes": 52,
-          "retweets": 1,
-          "replies": 7,
-          "isQuote": false,
-          "quotedTweetId": null
-        }
-      ]
-    },
-    {
-      "source": "x",
-      "name": "Peter Steinberger",
-      "handle": "steipete",
-      "bio": "Polyagentmorous ClawFather. Came back from retirement to mess with AI and help a lobster take over the world @openclaw🦞",
-      "tweets": [
-        {
-          "id": "2039043198329528446",
-          "text": "this just became more relevant 🙃 https://t.co/s2Z0P8Mo09",
-          "createdAt": "2026-03-31T18:12:36.000Z",
-          "url": "https://x.com/steipete/status/2039043198329528446",
-          "likes": 1262,
-          "retweets": 65,
-          "replies": 34,
-          "isQuote": true,
-          "quotedTweetId": "2032080738997481541"
-        },
-        {
-          "id": "2039019069257756735",
-          "text": "New CodexBar beta has experimental multi-acount support for codex. https://t.co/taqbCuJbJF",
-          "createdAt": "2026-03-31T16:36:43.000Z",
-          "url": "https://x.com/steipete/status/2039019069257756735",
-          "likes": 307,
-          "retweets": 19,
-          "replies": 21,
-          "isQuote": false,
-          "quotedTweetId": null
-        }
-      ]
-    },
-    {
-      "source": "x",
-      "name": "Dan Shipper",
-      "handle": "danshipper",
-      "bio": "ceo @every | the only subscription you need to stay at the edge of AI",
-      "tweets": [
-        {
-          "id": "2038952867030036572",
-          "text": "New compound engineering release! https://t.co/P13vRM8o9T",
-          "createdAt": "2026-03-31T12:13:40.000Z",
-          "url": "https://x.com/danshipper/status/2038952867030036572",
-          "likes": 96,
-          "retweets": 5,
-          "replies": 2,
-          "isQuote": true,
-          "quotedTweetId": "2038893322333507781"
-        },
-        {
-          "id": "2038947336047468643",
-          "text": "To be clear, I just want PAs who are extremely Claude pilled",
-          "createdAt": "2026-03-31T11:51:41.000Z",
-          "url": "https://x.com/danshipper/status/2038947336047468643",
-          "likes": 16,
-          "retweets": 0,
-          "replies": 3,
-          "isQuote": false,
-          "quotedTweetId": null
-        }
-      ]
-    }
-  ],
+  "x": [],
   "stats": {
-    "xBuilders": 4,
-    "totalTweets": 7
-  }
+    "xBuilders": 0,
+    "totalTweets": 0
+  },
+  "errors": [
+    "X API: User lookup failed: HTTP 402"
+  ]
 }
