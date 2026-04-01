@@ -1,0 +1,10 @@
+{
+  "sandbox": {
+    "network": {
+      "allowedDomains": [
+        "crafthunt.ai",
+        "registry.npmjs.org"
+      ]
+    }
+  }
+}
