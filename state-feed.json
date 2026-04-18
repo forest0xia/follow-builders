@@ -1,7 +1,6 @@
 {
   "seenTweets": {},
   "seenVideos": {
-    "9MEJ4syOVrQ": 1775891293323,
     "vK1qEF3a3WM": 1775978609788,
     "knx2wrILP1M": 1776067958029,
     "5KnCKadxSPY": 1776153369704,
@@ -9,11 +8,10 @@
     "RyTwRCKeDo4": 1776326227536
   },
   "seenArticles": {
-    "https://www.anthropic.com/engineering/claude-code-auto-mode": 1775891297303,
-    "https://claude.com/blog/harnessing-claudes-intelligence": 1775891298042,
     "https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense": 1776067962054,
     "https://claude.com/blog/claude-code-desktop-redesign": 1776239863985,
     "https://www.anthropic.com/engineering/managed-agents": 1776412665865,
-    "https://claude.com/blog/claude-managed-agents": 1776412666586
+    "https://claude.com/blog/claude-managed-agents": 1776412666586,
+    "https://www.anthropic.com/engineering/infrastructure-noise": 1776496629686
   }
 }
