@@ -1,7 +1,6 @@
 {
   "seenTweets": {},
   "seenVideos": {
-    "5KnCKadxSPY": 1776153369704,
     "ATt7QJgt-2k": 1776239863067,
     "RyTwRCKeDo4": 1776326227536
   },
@@ -10,6 +9,7 @@
     "https://www.anthropic.com/engineering/managed-agents": 1776412665865,
     "https://claude.com/blog/claude-managed-agents": 1776412666586,
     "https://www.anthropic.com/engineering/infrastructure-noise": 1776496629686,
-    "https://www.anthropic.com/engineering/claude-code-auto-mode": 1776583646168
+    "https://www.anthropic.com/engineering/claude-code-auto-mode": 1776583646168,
+    "https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense": 1776758516837
   }
 }
