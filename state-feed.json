@@ -3,13 +3,15 @@
   "seenVideos": {
     "CSYWbbP_OkY": 1777708340690,
     "XAbKflCncDo": 1777795679113,
-    "rv23_KcHt4s": 1777883804080
+    "rv23_KcHt4s": 1777883804080,
+    "5u7AjPardvo": 1777969190249
   },
   "seenArticles": {
     "https://claude.com/blog/claude-code-desktop-redesign": 1777623610329,
     "https://www.anthropic.com/engineering/april-23-postmortem": 1777708344669,
     "https://claude.com/blog/connectors-for-everyday-life": 1777708345351,
     "https://claude.com/blog/claude-managed-agents-memory": 1777708345913,
-    "https://www.anthropic.com/engineering/managed-agents": 1777795679797
+    "https://www.anthropic.com/engineering/managed-agents": 1777795679797,
+    "https://www.anthropic.com/engineering/claude-code-auto-mode": 1777969191412
   }
 }
