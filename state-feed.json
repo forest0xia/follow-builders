@@ -1,14 +1,10 @@
 {
   "seenTweets": {},
   "seenVideos": {
-    "DvyZcCfepeI": 1778400877902,
     "XAbKflCncDo": 1778493087099,
     "g5TWnUjbeFM": 1778575682135
   },
   "seenArticles": {
-    "https://www.anthropic.com/engineering/april-23-postmortem": 1778400884328,
-    "https://claude.com/blog/connectors-for-everyday-life": 1778400884998,
-    "https://claude.com/blog/claude-managed-agents-memory": 1778400885562,
     "https://www.anthropic.com/engineering/managed-agents": 1778493092970,
     "https://www.anthropic.com/engineering/claude-code-auto-mode": 1778662286998,
     "https://claude.com/blog/new-in-claude-managed-agents": 1778835331459
