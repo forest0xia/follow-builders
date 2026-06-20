@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-06-19T10:45:40.788Z",
+  "generatedAt": "2026-06-20T09:26:36.550Z",
   "lookbackHours": 336,
   "podcasts": [],
   "stats": {
     "podcastEpisodes": 0
   },
   "errors": [
+    "YouTube: Failed to fetch videos for Latent Space: HTTP 429",
     "YouTube: Failed to fetch videos for Training Data: HTTP 429",
     "YouTube: Failed to fetch videos for No Priors: HTTP 429",
     "YouTube: Failed to fetch videos for Unsupervised Learning: HTTP 429",
     "YouTube: Failed to fetch videos for Data Driven NYC: HTTP 429",
-    "YouTube: Failed to fetch videos for AI & I by Every: HTTP 429",
-    "YouTube: Failed to get transcript for h5dlIPM0X18: HTTP 429"
+    "YouTube: Failed to fetch videos for AI & I by Every: HTTP 429"
   ]
 }
