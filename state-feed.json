@@ -8,10 +8,15 @@
     "hLUGXO5DSpo": 1783154657912,
     "f6D_aiy8qyU": 1783334934168,
     "AZrU6y3pUcU": 1783334936355,
-    "UN47z_opfmo": 1783417873164
+    "UN47z_opfmo": 1783417873164,
+    "6bGxm8gX41o": 1783499820328
   },
   "seenArticles": {
     "https://claude.com/blog/claude-for-foundation-models": 1783242748026,
-    "https://claude.com/blog/artifacts-in-claude-code": 1783417876944
+    "https://claude.com/blog/artifacts-in-claude-code": 1783417876944,
+    "https://www.anthropic.com/engineering/how-we-contain-claude": 1783499828616,
+    "https://www.anthropic.com/engineering/april-23-postmortem": 1783499830957,
+    "https://www.anthropic.com/engineering/managed-agents": 1783499832200,
+    "https://claude.com/blog/claude-managed-agents-updates": 1783499832918
   }
 }

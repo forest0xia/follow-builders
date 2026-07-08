@@ -1,15 +1,13 @@
 {
-  "generatedAt": "2026-07-07T09:51:13.164Z",
+  "generatedAt": "2026-07-08T08:37:00.328Z",
   "lookbackHours": 336,
   "podcasts": [],
   "stats": {
     "podcastEpisodes": 0
   },
   "errors": [
-    "YouTube: Metadata fetch failed for aiR7F4jqjXY: HTTP 429",
-    "YouTube: Failed to fetch videos for No Priors: HTTP 429",
     "YouTube: Metadata fetch failed for W_iO8XxgD_I: HTTP 429",
     "YouTube: Metadata fetch failed for omX6wrLuX08: HTTP 429",
-    "YouTube: Failed to get transcript for UN47z_opfmo: HTTP 429"
+    "YouTube: Failed to get transcript for 6bGxm8gX41o: HTTP 429"
   ]
 }
