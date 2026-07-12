@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T07:00:56.864Z",
+  "generatedAt": "2026-07-12T08:24:23.237Z",
   "lookbackHours": 24,
   "x": [],
   "stats": {
@@ -7,11 +7,6 @@
     "totalTweets": 0
   },
   "errors": [
-    "X API: User lookup failed for karpathy,swyx,joshwoodward,bcherny,thsottiaux: HTTP 402",
-    "X API: User lookup failed for petergyang,thenanyu,realmadhuguru,AmandaAskell,_catwu: HTTP 402",
-    "X API: User lookup failed for trq212,GoogleLabs,amasad,rauchg,alexalbert__: HTTP 402",
-    "X API: User lookup failed for levie,ryolu_,garrytan,mattturck,zarazhangrui: HTTP 402",
-    "X API: User lookup failed for nikunj,steipete,danshipper,adityaag,sama: HTTP 402",
-    "X API: User lookup failed for claudeai: HTTP 402"
+    "X API: User lookup failed: HTTP 402"
   ]
 }
