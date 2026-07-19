@@ -1,8 +1,6 @@
 {
   "seenTweets": {},
-  "seenVideos": {
-    "bIOCKXcxloQ": 1783757010605
-  },
+  "seenVideos": {},
   "seenArticles": {
     "https://claude.com/blog/claude-for-foundation-models": 1784017011856,
     "https://claude.com/blog/artifacts-in-claude-code": 1784190111336,
