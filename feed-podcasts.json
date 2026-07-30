@@ -1,11 +1,16 @@
 {
-  "generatedAt": "2026-07-29T07:13:17.409Z",
+  "generatedAt": "2026-07-30T08:35:00.908Z",
   "lookbackHours": 336,
   "podcasts": [],
   "stats": {
     "podcastEpisodes": 0
   },
   "errors": [
-    "Podcast: Transcript error for \"Codex from 0 to 10M Users: Building ChatGPT Work — Akshay Nathan, OpenAI\": HTTP 404: {\"status\":\"error\",\"message\":\"Episode not found\"}"
+    "YouTube: Failed to fetch videos for Latent Space: HTTP 429",
+    "YouTube: Failed to fetch videos for Training Data: HTTP 429",
+    "YouTube: Failed to fetch videos for No Priors: HTTP 429",
+    "YouTube: Failed to fetch videos for Unsupervised Learning: HTTP 429",
+    "YouTube: Failed to fetch videos for Data Driven NYC: HTTP 429",
+    "YouTube: Failed to fetch videos for AI & I by Every: HTTP 429"
   ]
 }
