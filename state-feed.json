@@ -1,9 +1,6 @@
 {
   "seenTweets": {},
-  "seenVideos": {
-    "wv53mDmY-k0": 1786259002270,
-    "2RJiaf0SY8s": 1786259004617
-  },
+  "seenVideos": {},
   "seenArticles": {
     "https://claude.com/blog/artifacts-in-claude-code": 1786348196486,
     "https://www.anthropic.com/engineering/how-we-contain-claude": 1786432502730,
