@@ -1,6 +1,8 @@
 {
   "seenTweets": {},
-  "seenVideos": {},
+  "seenVideos": {
+    "YscDZpVF4CQ": 1788346733703
+  },
   "seenArticles": {
     "https://claude.com/blog/claude-in-chrome-generally-available": 1787851804492,
     "https://claude.com/blog/cowork-built-in-browser": 1787851805431,
