@@ -1,17 +1,14 @@
 {
   "seenTweets": {},
   "seenVideos": {
-    "MrnhtyPGCKI": 1791026610577,
-    "awoR908Yu5Y": 1791026610643,
     "OpeCP4wCxkA": 1791115501705,
     "TCpRwJBQvW0": 1791209348132,
     "QeiYSLBCwD4": 1791378033868,
     "74X0DJOVEc8": 1791464926075,
-    "lx9RjE0GekI": 1791550487217
+    "lx9RjE0GekI": 1791550487217,
+    "NufiHZfMwaw": 1791634369214
   },
   "seenArticles": {
-    "https://claude.com/blog/cowork-is-now-claude": 1791026610891,
-    "https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs": 1791026611438,
     "https://www.anthropic.com/engineering/how-we-contain-claude": 1791464926384,
     "https://www.anthropic.com/engineering/april-23-postmortem": 1791464927029,
     "https://www.anthropic.com/engineering/managed-agents": 1791464927646
