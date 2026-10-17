@@ -1,12 +1,13 @@
 {
   "seenTweets": {},
   "seenVideos": {
-    "lx9RjE0GekI": 1791550487217,
     "NufiHZfMwaw": 1791634369214,
     "up4sG9RM20M": 1791721625182,
     "YHiqVRxGViM": 1791817067099
   },
   "seenArticles": {
-    "https://www.anthropic.com/engineering/redesigning-source-control": 1791977472623
+    "https://www.anthropic.com/engineering/redesigning-source-control": 1791977472623,
+    "https://www.anthropic.com/engineering/how-we-contain-claude": 1792232667210,
+    "https://www.anthropic.com/engineering/april-23-postmortem": 1792232667815
   }
 }
