@@ -1,16 +1,12 @@
 {
-  "generatedAt": "2026-10-20T11:12:47.404Z",
+  "generatedAt": "2026-10-21T06:43:00.609Z",
   "lookbackHours": 336,
   "podcasts": [],
   "stats": {
     "podcastEpisodes": 0
   },
   "errors": [
-    "YouTube: Failed to fetch videos for Latent Space: HTTP 429",
-    "YouTube: Failed to fetch videos for Training Data: HTTP 429",
-    "YouTube: Failed to fetch videos for No Priors: HTTP 429",
-    "YouTube: Failed to fetch videos for Unsupervised Learning: HTTP 429",
-    "YouTube: Failed to fetch videos for Data Driven NYC: HTTP 429",
-    "YouTube: Failed to fetch videos for AI & I by Every: HTTP 429"
+    "Podcast: Transcript error for \"The Programmable Data Center — Evan Conrad, SF Compute\": HTTP 404: {\"status\":\"error\",\"message\":\"Episode not found\"}",
+    "Podcast: Transcript error for \"Inside the Robot Data Factory: Mecka's Josh Gao on Sensorizing Humans to Train Robots\": HTTP 500: {\"status\":\"error\",\"message\":\"Failed to get transcript\"}"
   ]
 }
